@@ -1,0 +1,40 @@
+.button{
+    padding: .5rem 1rem;
+    border: 1px solid;
+    transition: all linear .2s;
+    border-radius: .5rem;
+    font-weight: bolder;
+}
+.primary{
+    @extend .button;
+    background-color: var(--primary);
+    border-color: transparent;
+    &:hover{
+        border-color: grey;
+        background-color: darken(#8fb3ff,10%)
+    }
+}
+
+.outlined{
+    @extend .button;
+    border-color:var(--primary) ;
+    background-color: var(--secondary);
+    &:hover{
+        background-color: var(--primary);
+    }
+}
+
+.alert{
+    @extend .button;
+    border-color:transparent ;
+    color: white;
+    background-color: var(--accent);
+    &:hover{
+        background-color:darken(#d41d6d,10%);
+
+    }
+    &:active{
+        background-color:darken(#d41d6d,20%);
+
+    }
+}

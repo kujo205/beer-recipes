@@ -1,0 +1,11 @@
+/*
+colors from https://realtimecolors.com/?colors=000000-ffffff-8fb3ff-ebf1ff-d41d6d
+*/
+
+:root{
+    --text-accent: #4777fa;
+    --primary:#8fb3ff;
+    --secondary:#ebf1ff;
+    --accent:#d41d6d;
+    --background2:#f2f2f2;
+}

@@ -1,0 +1,13 @@
+.navbar{
+    background-color:var(--background2);
+    display: flex;
+    justify-content: space-around;
+    height: 50px;
+    align-items: center;
+    font-weight: bolder;
+}
+.navbar ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

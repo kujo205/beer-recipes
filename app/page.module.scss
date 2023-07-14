@@ -1,0 +1,11 @@
+$mobile:700px;
+$desktop:1200px;
+.layout{
+  margin: 1rem;
+}
+
+@media screen and (min-width: $mobile){
+  .layout{
+    margin: 1rem 2rem;
+  }
+}

@@ -1,0 +1,38 @@
+.wrapper{
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+  border-radius: 16px;
+  border:2px solid var(--primary);
+}
+
+.header{
+  h2{
+    font-size: larger;
+    font-weight: bolder;
+  }
+}
+
+.subheader{
+  h3{
+    font-size: larger;
+    font-weight: bolder;
+    color: var(--text-accent);
+  }
+}
+
+.img{
+  height: 500px;
+  &>img{
+    height: 100%;
+  }
+}
+.content{
+  @extend .subheader;
+}
+
+.ingradients,.reccomendations,.description,.properties{
+  @extend .header;
+}
+.reccomendations{}
+.properties{}

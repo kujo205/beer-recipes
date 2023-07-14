@@ -1,0 +1,48 @@
+.card{
+    border:2px solid transparent;
+    height: calc((100vh - 50px - 4rem) / 3);
+    display: flex;
+    background-color: var(--background2);
+    border-radius: 8px;
+    padding: 1rem;
+    gap: 2rem;
+    &:hover{
+        box-shadow: 1px 1px 5px grey;
+        -webkit-transition:  box-shadow .3s ease-in-out;
+        cursor: pointer;
+    }
+}
+.selected{
+    border-color: darken(#8fb3ff,10%);
+}
+
+.image{
+    display: flex;
+    justify-content: center;
+    min-width: 100px;
+    img{
+        height: 100%;
+    }
+}
+.description{
+    --max-lines: 4;
+    overflow: hidden;
+
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: var(--max-lines);
+}
+.title{
+    font-weight: bold;
+    font-size: larger;
+
+}
+.actions{
+    display: flex;
+    gap: .5rem;
+}
+.main{
+    display: flex;
+    flex-flow: column;
+    gap: .5rem;
+}
