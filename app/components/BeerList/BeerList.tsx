@@ -13,7 +13,7 @@ export const BeerList = () => {
       const beers = await BeersService.getPage();
       setBeers(beers);
     })();
-  }, []);
+  }, );
 
   const { displayedBeers, addNext5, setBeers, moreBeers } = useBeers(
     (state) => ({

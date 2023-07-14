@@ -44,6 +44,8 @@ export function useIntersectionObserver(
     root,
     rootMargin,
     frozen,
+    elementRef,
+    threshold
   ]);
 
   return entry;
