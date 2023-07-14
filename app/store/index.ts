@@ -13,16 +13,16 @@ type State = {
 
 type Action = {
   setBeers: (beers: TBeer[]) => void;
-  addNext5: () => void;
+  addNext5: () => Promise<void>;
   removeBears: () => void;
-  updateDisplayedBeers: () => void;
+  updateDisplayedBeers: () => Promise<void>;
   addSelected: (id: number) => void;
   removeSelected: (id: number) => void;
 };
 
 const sliceBeers = (startIndex: number, beers: TBeer[]) => {
   //since array slice returns a shallow copy, it's better to make a deep copy
-  const result = [];
+  const result:TBeer[] = [];
   for (let i = startIndex; i < startIndex + 15; i++) {
     result.push(beers[i]);
   }
@@ -49,9 +49,9 @@ export const useBeers = create<State & Action>((set, get) => {
       if (get().beers.length - 1 - get().firstIndex <= 15) {
         const fetchedBeers = await BeersService.getPage(get().page + 1);
         if (fetchedBeers.length === 0) {
-          set((state) => ({
+          set({
             areMoreBears: false,
-          }));
+          });
           return;
         }
         const allBeers = [...get().beers, ...fetchedBeers];
@@ -65,10 +65,11 @@ export const useBeers = create<State & Action>((set, get) => {
             displayedBeers.some((beer) => beer.id === id),
           ),
         }));
+        return;
       }
       set((state) => ({
-        displayedBeers: sliceBeers(firstIndex, state.beers),
         firstIndex,
+        displayedBeers: sliceBeers(firstIndex, state.beers),
       }));
     },
     removeBears: () => {
@@ -104,9 +105,10 @@ export const useBeers = create<State & Action>((set, get) => {
         }));
       }
 
-      return set((state) => ({
+      set((state) => ({
         displayedBeers: sliceBeers(state.firstIndex, state.beers),
       }));
+      return
     },
     addSelected: (id) =>
       set((state) => {

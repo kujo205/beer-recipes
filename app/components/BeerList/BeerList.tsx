@@ -8,12 +8,13 @@ import styles from "./BeerList.module.scss";
 import { useIntersectionObserver } from "@/app/hooks/useIntersectionObserver";
 import { Message } from "@/app/components/ui/Message/Message";
 export const BeerList = () => {
+
   useEffect(() => {
     (async () => {
       const beers = await BeersService.getPage();
       setBeers(beers);
     })();
-  }, );
+  }, []);
 
   const { displayedBeers, addNext5, setBeers, moreBeers } = useBeers(
     (state) => ({
@@ -29,10 +30,12 @@ export const BeerList = () => {
   const moreRef = useRef<HTMLParagraphElement | null>(null);
   const entry = useIntersectionObserver(moreRef, {});
 
+
   useEffect(() => {
     if (entry?.isIntersecting) {
       addNext5();
     }
+
   }, [entry?.isIntersecting]);
 
   return (
