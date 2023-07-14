@@ -14,7 +14,6 @@ export const Button: FC<ButtonProps> = ({
   ...other
 }) => {
   const variantClassName = styles[variant];
-
   return (
     <button
       {...other}
