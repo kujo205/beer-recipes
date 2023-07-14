@@ -4,7 +4,7 @@ import styles from "./BeeCard.module.scss";
 import { Button } from "@/app/components/ui/Button/Button";
 import { useState } from "react";
 import { useBeers } from "@/app/store";
-import Link from "next/Link";
+import Link from 'next/link';
 export const BeerCard: FC<{ beer: TBeer }> = ({ beer }) => {
   const [selected, setSelected] = useState<boolean>(false);
 

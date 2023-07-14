@@ -13,11 +13,11 @@ type State = {
 
 type Action = {
   setBeers: (beers: TBeer[]) => void;
-  addNext5: () => Promise<void>;
+  addNext5: () => void;
   removeBears: () => void;
-  updateDisplayedBeers: () => Promise<Partial<State>>;
-  addSelected: (id: number) => {};
-  removeSelected: (id: number) => {};
+  updateDisplayedBeers: () => void;
+  addSelected: (id: number) => void;
+  removeSelected: (id: number) => void;
 };
 
 const sliceBeers = (startIndex: number, beers: TBeer[]) => {

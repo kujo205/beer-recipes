@@ -1,10 +1,11 @@
 import styles from "./Button.module.scss";
-import React, { FC } from "react";
+import React, { FC,ReactNode,ButtonHTMLAttributes } from "react";
 
 interface ButtonProps
-  extends React.ComponentPropsWithoutRef<HTMLButtonElement> {
+  extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: "primary" | "outlined" | "alert";
-  className: string;
+  className?: string;
+  children:ReactNode
 }
 export const Button: FC<ButtonProps> = ({
   variant = "primary",
