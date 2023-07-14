@@ -45,7 +45,6 @@ export const useBeers = create<State & Action>((set, get) => {
         displayedBeers: sliceBeers(0, beers),
       })),
     addNext5: async () => {
-      console.log(get());
       const firstIndex = get().firstIndex + 5;
       if (get().beers.length - 1 - get().firstIndex <= 15) {
         const fetchedBeers = await BeersService.getPage(get().page + 1);
